@@ -15,9 +15,19 @@ Go to the project folder and run the following command:
 ## Usage
 After installation make the requests to the following endpoints:
 
-### The following link contains all of the API available endpoint with Examples:
+POST localhost:9000/score to insert a score
+GET localhost:9000/scores to retrieve all scores from database
 
-#### https://documenter.getpostman.com/view/2007242/S11NPHWg
+##### Example
+
+curl --location --request POST 'http://localhost:9000/score' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"name": "user test",
+	"score": 400
+}'
+
+should create a register with name  user test and score of 400. 
 
 
 ## This Software was buit using the following technologies:
