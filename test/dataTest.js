@@ -20,11 +20,11 @@ describe('db-test', () => {
     });
     it('bd-test-insert', function(done) {
         const newScore = new Score({
-            username: "test",
+            name: "test",
             score: 50
         });
         newScore.save().then(function(score) {
-            assert.equal(score.username, "test");
+            assert.equal(score.name, "test");
             done();
         });
     });
@@ -52,7 +52,7 @@ describe('api-tests', () => {
 
     it('insert-score', function(done) {
         let jsonData = {
-            "username": "Jhon Doe",
+            "name": "Jhon Doe",
             "score": 100
         };
         request.post({
@@ -71,7 +71,7 @@ describe('api-tests', () => {
         request.get('http://localhost:3000/scores',{json: true}, function(err, resp) {
             if(err) assert.ok(false, err);
 
-            assert.equal(resp.body[1].username, "Jhon Doe");
+            assert.equal(resp.body[1].name, "Jhon Doe");
             done();
         });
     });

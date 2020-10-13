@@ -6,7 +6,7 @@ class ScoreController{
 
     async setScore(req, res) {
         const newScore = new Score({
-            username: req.body.username, 
+            name: req.body.name, 
             score: Number(req.body.score)
         });
         
@@ -15,7 +15,7 @@ class ScoreController{
     
             return res.status(200).send(score);
         } catch(err) {
-            return res.status(500).send(err + "body: " + req.body.username + " ");
+            return res.status(500).send(err + "body: " + req.body.name + " ");
         }
     }
 
