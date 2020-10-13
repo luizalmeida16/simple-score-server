@@ -71,7 +71,7 @@ describe('api-tests', () => {
         request.get('http://localhost:3000/scores',{json: true}, function(err, resp) {
             if(err) assert.ok(false, err);
 
-            assert.equal(resp.body[1].name, "Jhon Doe");
+            assert.equal(resp.body.scores[1].name, "Jhon Doe");
             done();
         });
     });

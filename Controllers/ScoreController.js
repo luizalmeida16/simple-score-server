@@ -23,7 +23,7 @@ class ScoreController{
         try {
             let scores = await Score.find();
 
-            return res.status(200).send(scores);
+            return res.status(200).send({scores: scores});
         } catch(err) {
             return res.status(500).send(err);
         }
