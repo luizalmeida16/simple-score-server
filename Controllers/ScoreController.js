@@ -15,7 +15,7 @@ class ScoreController{
     
             return res.status(200).send(score);
         } catch(err) {
-            return res.status(500).send(err + "body: " + req.body.name + " ");
+            return res.status(500).send(err);
         }
     }
 
