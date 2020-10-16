@@ -21,7 +21,7 @@ class ScoreController{
 
     async getScores(req, res) {
         try {
-            let scores = await Score.find();
+            let scores = await Score.find().sort({score: -1});
 
             return res.status(200).send({scores: scores});
         } catch(err) {
